@@ -4,90 +4,31 @@
 //
 //  Created by Ishita Mundra on 12/31/21.
 //
-
 import SwiftUI
 import MapKit
 
-struct SuggestAttractionsView: View {
+
+// IMPORTANT: set price as a range - also display this range to the user since it often varies for different people
+
+// This view displays the top five locations based on the five user attributes
+struct SuggestAttractions: View {
     
+    // All five user attribute variables are passed into this view
     @Binding var attribute1: String
     @Binding var attribute2: String
     @Binding var attribute3: String
     @Binding var attribute4: String
     @Binding var attribute5: String
     
-    @State private var spaceneedle = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 47.6205, longitude: 122.3493),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var mountRanier = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 46.879967, longitude: -121.726906),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var seattleGreatWheel = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 47.606091, longitude: -122.342430),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var wildWaves = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 47.2732, longitude: -122.3126),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var olympicNationalPark = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 47.8021, longitude: -123.6044),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var leavenworth = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 47.5962, longitude: -120.6615),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var mountSaintHelens = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 46.1914, longitude: -122.1956),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var skagitValleyTulipFestival = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 48.4176, longitude: -122.3381),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var museumOfGlass = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 47.2455, longitude: -122.4340),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var washingtonStateCapitolBuilding = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 47.0359, longitude: -122.9044),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var museumOfPopCulture = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 47.6215, longitude: -122.3481),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    @State private var sanJuanIslands = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 48.636669, longitude: -122.916611),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    
     var body: some View {
         
-        // Use something like .contains() when comparing the 2 arrays.
+        // Array of 50 tourist objects
+        // Each tourist object has a name, location, type of location, price, season, age group, and coordinate.
         let touristAttractionsArr = [
-            ["Space Needle", "Seattle", "Landmark Restaurant", "30", "Winter Spring Summer Fall", "Yes"],
-            ["Mount Ranier", "Tacoma", "Nature", "20", "Summer", "No"],
-            ["The Seattle Great Wheel", "Seattle", "Other", "10", "Winter Spring Summer Fall", "Yes"],
-            ["Wild Waves", "Landmark", "Theme Park", "40", "Spring Summer", "Yes"],
-            ["Olympic National Park", "Other", "Nature", "20", "Summer", "No"],
-            ["Leavenworth", "Other", "Culture", "101", "Spring", "No"],
-            ["Mount Saint Helens", "Other", "Nature", "10", "Summer Fall", "Yes"],
-            ["Skagit Valley Tulip Festival", "Nature", "20", "Spring Summer", "No"],
-            ["Museum of Glass", "Tacoma", "Art", "30", "Winter Spring Summer Fall", "Yes"],
-            ["Washington State Capitol Building", "Olympia", "Historical", "0", "Winter Spring Summer Fall", "No"],
-            ["Museum of Pop Culture", "Seattle", "Art", "30", "Winter Spring Summer Fall", "Yes"],
-            ["San Juan Islands", "Friday Harbor", "Nature", "101", "Spring", "No"]
-        ]
-        
-        let touristAttractionsArr2 = [
             Attraction(name: "Space Needle", loc: "Seattle", typeOfLoc: "Landmark", price: "30", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 47.6205, longitude: -122.349277)),
             Attraction(name: "Wild Waves", loc: "Federal Way", typeOfLoc: "Theme Park", price: "40", season: "Spring, Summer", age: "Kids", coordinate: CLLocationCoordinate2D(latitude: 47.273400383444006, longitude: -122.31274537742554)),
             Attraction(name: "Mount Ranier", loc: "Tacoma", typeOfLoc: "Nature", price: "20", season: "Summer", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 46.8537143424195, longitude: -121.76118136944118)),
-            Attraction(name: "The Seattle Great Wheel", loc: "Seattle", typeOfLoc: "Other", price: "10", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.606091, longitude: -122.342430)),
+            Attraction(name: "The Seattle Great Wheel", loc: "Seattle", typeOfLoc: "Theme Park", price: "10", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.606091, longitude: -122.342430)),
             Attraction(name: "Olympic National Park", loc: "Port Angeles", typeOfLoc: "Nature", price: "20", season: "Summer", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 47.84713317521236, longitude: -123.61563332327592)),
             Attraction(name: "Leavenworth", loc: "Cascade Mountains", typeOfLoc: "Culture", price: "101", season: "Spring", age: "Adults", coordinate: CLLocationCoordinate2D(latitude: 47.59799422007123, longitude: -120.66159845949579)),
             Attraction(name: "Mount Saint Helens", loc: "Skamania County", typeOfLoc: "Nature", price: "10", season: "Summer, Fall", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 46.19335941411949, longitude: -122.19563679503446)),
@@ -96,8 +37,7 @@ struct SuggestAttractionsView: View {
             Attraction(name: "Washington State Capitol Building", loc: "Olympia", typeOfLoc: "Historical", price: "0", season: "Winter, Spring, Summer, Fall", age: "Kids, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.0360957334523, longitude: -122.90442374489757)),
             Attraction(name: "Museum of Pop Culture", loc: "Seattle", typeOfLoc: "Art", price: "30", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.62160531458876, longitude: -122.34809231603678)),
             Attraction(name: "San Juan Islands", loc: "Friday Harbor", typeOfLoc: "Nature", price: "101", season: "Summer", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 48.636918606664295, longitude: -123.0050115161143)),
-            // new (other is not given for location name), set price as a range - also display this range to the user since it often varies for different people
-            Attraction(name: "Lake Diablo", loc: "North Cascades", typeOfLoc: "Nature", price: "0", season: "Spring, Summer", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 48.81368470304164, longitude: -121.28044950908505)),
+            Attraction(name: "Diablo Lake", loc: "North Cascades", typeOfLoc: "Nature", price: "0", season: "Spring, Summer", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 48.81368470304164, longitude: -121.28044950908505)),
             Attraction(name: "North Cascades National Park", loc: "North Cascades", typeOfLoc: "Nature", price: "0", season: "Spring, Summer", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 48.7718, longitude: 121.2985)),
             Attraction(name: "Tacoma Art Museum", loc: "Tacoma", typeOfLoc: "Art", price: "20", season: "Winter, Spring, Summer, Fall", age: "Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.2475599070071, longitude: -122.43685614673976)),
             Attraction(name: "Bellevue Botanical Garden", loc: "Bellevue", typeOfLoc: "Nature", price: "0", season: "Spring, Summer", age: "Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.61940744789819, longitude: -122.18176594906065)),
@@ -105,7 +45,7 @@ struct SuggestAttractionsView: View {
             Attraction(name: "Northwest Railway Museum", loc: "Snoqualmie", typeOfLoc: "Historical", price: "20", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.529995001959456, longitude: -121.82690582491334)),
             Attraction(name: "Seattle Aquarium", loc: "Seattle", typeOfLoc: "Nature", price: "30", season: "Winter, Spring, Summer, Fall", age: "Kids", coordinate: CLLocationCoordinate2D(latitude: 47.60754484801229, longitude: -122.34293434487334)),
             Attraction(name: "Pike Place Market", loc: "Seattle", typeOfLoc: "Culture", price: "10", season: "Winter, Spring, Summer, Fall", age: "Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.60851981196058, longitude: -122.3402309141863)),
-            Attraction(name: "Gum Wall", loc: "Seattle", typeOfLoc: "Other", price: "20", season: "Sumer", age: "Kids", coordinate: CLLocationCoordinate2D(latitude: 47.6084, longitude: 122.3403)),
+            Attraction(name: "Gum Wall", loc: "Seattle", typeOfLoc: "Landmark", price: "20", season: "Summer", age: "Kids", coordinate: CLLocationCoordinate2D(latitude: 47.6084, longitude: 122.3403)),
             Attraction(name: "The Museum of Flight", loc: "Seattle", typeOfLoc: "Historical", price: "20", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.51864656501488, longitude: -122.29683304486451)),
             Attraction(name: "Chihuly Garden and Glass", loc: "Seattle", typeOfLoc: "Nature", price: "30", season: "Spring, Summer", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.620682816757956, longitude: -122.35052270439553)),
             Attraction(name: "Woodland Park Zoo", loc: "Seattle", typeOfLoc: "Nature", price: "20", season: "Spring, Summer", age: "Kids", coordinate: CLLocationCoordinate2D(latitude: 47.668796028425675, longitude: -122.3508540178859)),
@@ -130,7 +70,6 @@ struct SuggestAttractionsView: View {
             Attraction(name: "Washington State University", loc: "Pullman", typeOfLoc: "Landmark", price: "0", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 46.73211175512409, longitude: -117.1542727081565)),
             Attraction(name: "Sky View Observatory", loc: "Seattle", typeOfLoc: "Landmark", price: "10", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.60445068552854, longitude: -122.33113984857559)),
             Attraction(name: "Lumen Field", loc: "Seattle", typeOfLoc: "Landmark", price: "20", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 47.59529648188593, longitude: -122.33158575836623)),
-            // FIVE MORE
             Attraction(name: "Tacoma Narrows Bridge", loc: "Pierce County", typeOfLoc: "Landmark", price: "10", season: "Winter, Spring, Summer, Fall", age: "Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.26907992068161, longitude: -122.55164597372357)),
             Attraction(name: "Franklin Falls", loc: "King County", typeOfLoc: "Nature", price: "10", season: "Spring, Summer", age: "Kids, Adults", coordinate: CLLocationCoordinate2D(latitude: 47.42629231635013, longitude: -121.43299308376342)),
             Attraction(name: "Harborside Fountain Park", loc: "Bremerton", typeOfLoc: "Nature", price: "0", season: "Spring, Summer", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.56220821172171, longitude: -122.62580151603935)),
@@ -138,58 +77,109 @@ struct SuggestAttractionsView: View {
             Attraction(name: "Washington State History Museum", loc: "Tacoma", typeOfLoc: "Historical", price: "20", season: "Winter, Spring, Summer, Fall", age: "Kids, Adults, Seniors", coordinate: CLLocationCoordinate2D(latitude: 47.24480153021374, longitude: -122.43605056208324))
         ]
         
+        // The 5 attributes from user input are all combined into one array
         let userAttributesArr = [attribute1, attribute2, attribute3, attribute4, attribute5]
         
-        let numAttributes = countAttributes(arr: touristAttractionsArr2, userAttributes: userAttributesArr)
+        // numAttributes is a dictionary
+        // The values of this dictionary represent the number of attributes that each tourist location in touristAttractionsArr meet
+        // The keys of this dictionary represent the index of the each tourist attraction in touristAttractionsArr
+        let numAttributes = countAttributes(arr: touristAttractionsArr, userAttributes: userAttributesArr)
+        
+        // The numAttributes disctionary is sorted by values from greatest to least and assigned to the variable sortedDict
         let sortedDict = numAttributes.sorted(by: { $0.value > $1.value })
         
         VStack {
-            let first = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 0, sortedDict: sortedDict).0
-            let second = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 1, sortedDict: sortedDict).0
-            let third = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 2, sortedDict: sortedDict).0
-            let fourth = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 3, sortedDict: sortedDict).0
-            let fifth = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 4, sortedDict: sortedDict).0
             
-            let firstAtt = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 0, sortedDict: sortedDict).1
-            let secondAtt = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 1, sortedDict: sortedDict).1
-            let thirdAtt = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 2, sortedDict: sortedDict).1
-            let fourthAtt = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 3, sortedDict: sortedDict).1
-            let fifthAtt = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 4, sortedDict: sortedDict).1
+            // Keeps track of the top five tourist attraction names
+            let first = touristAttractionsArr[sortedDict[0].key].name
+            let second = touristAttractionsArr[sortedDict[1].key].name
+            let third = touristAttractionsArr[sortedDict[2].key].name
+            let fourth = touristAttractionsArr[sortedDict[3].key].name
+            let fifth = touristAttractionsArr[sortedDict[4].key].name
             
-            let firstLoc = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 0, sortedDict: sortedDict).2
-            let secondLoc = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 1, sortedDict: sortedDict).2
-            let thirdLoc = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 2, sortedDict: sortedDict).2
-            let fourthLoc = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 3, sortedDict: sortedDict).2
-            let fifthLoc = TopFive(arr: touristAttractionsArr2, userAttributes: userAttributesArr, num: 4, sortedDict: sortedDict).2
-
+            // Keeps track of the top five tourist locations
+            let firstAtt = touristAttractionsArr[sortedDict[0].key]
+            let secondAtt = touristAttractionsArr[sortedDict[1].key]
+            let thirdAtt = touristAttractionsArr[sortedDict[2].key]
+            let fourthAtt = touristAttractionsArr[sortedDict[3].key]
+            let fifthAtt = touristAttractionsArr[sortedDict[4].key]
+            
+            // Keeps track of the attributes that each tourist location in the top five meet
+            let firstCount = sortedDict[0].value
+            let secondCount = sortedDict[1].value
+            let thirdCount = sortedDict[2].value
+            let fourthCount = sortedDict[3].value
+            let fifthCount = sortedDict[4].value
+            
+            Text("Top Five Attractions")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            
+            // Displays top five tourist location
+            // Numbers each location (greatest is 1 and so on...)
+            // Names each tourist location and provides and image
+            // Details how many attributes tourist location meets
             List {
+                
+                // User is able to explore more about the location by clicking on an arrow near the side of the each location
+                // The attraction object is passed to the AttractionsDetailView to present more information about that location
+                // Information about each attribute is displayed
+                // A map of where the attraction is located is also displayed
                 NavigationLink(destination: AttractionsDetailView(attraction: firstAtt)) {
-                    AttractionRowView(first, description: "Meets " + String(firstLoc) + "/5 attributes", titleIcon: first + " Circle", count: 1)
+                    AttractionRowView(first, description: "Meets " + String(firstCount) + "/5 attributes", titleIcon: first + " Circle", count: 1)
                 }
                 NavigationLink(destination: AttractionsDetailView(attraction: secondAtt)) {
-                    AttractionRowView(second, description: "Meets " + String(secondLoc) + "/5 attributes", titleIcon: second + " Circle", count: 2)
+                    AttractionRowView(second, description: "Meets " + String(secondCount) + "/5 attributes", titleIcon: second + " Circle", count: 2)
                 }
                 NavigationLink(destination: AttractionsDetailView(attraction: thirdAtt)) {
-                    AttractionRowView(third, description: "Meets " + String(thirdLoc) + "/5 attributes", titleIcon: third + " Circle", count: 3)
+                    AttractionRowView(third, description: "Meets " + String(thirdCount) + "/5 attributes", titleIcon: third + " Circle", count: 3)
                 }
                 NavigationLink(destination: AttractionsDetailView(attraction: fourthAtt)) {
-                    AttractionRowView(fourth, description: "Meets " + String(fourthLoc) + "/5 attributes", titleIcon: fourth + " Circle", count: 4)
+                    AttractionRowView(fourth, description: "Meets " + String(fourthCount) + "/5 attributes", titleIcon: fourth + " Circle", count: 4)
                 }
                 NavigationLink(destination: AttractionsDetailView(attraction: fifthAtt)) {
-                    AttractionRowView(fifth, description: "Meets " + String(fifthLoc) + "/5 attributes", titleIcon: fifth + " Circle", count: 5)
+                    AttractionRowView(fifth, description: "Meets " + String(fifthCount) + "/5 attributes", titleIcon: fifth + " Circle", count: 5)
                 }
             }
+            
+            // Provides the user an option to return home, through a button
+            NavigationLink(destination: HomeScreen().hiddenNavigationBarStyle()) {
+                    Text("Return Home")
+                        .font(.title2)
+                        .foregroundColor(Color.white)
+                        .bold()
+                        .frame(width: 310, height: 30)
+                        .padding(20)
+                        .background(
+                            RoundedRectangle(
+                                cornerRadius:30,
+                                style: .continuous)
+                            .fill(Color.black)
+                        )
+                    
+                }
         }
     }
     
+    // This function compares the userAttributes array and touristAttractions array
+    // The number of attributes that each location meets is represented through count
+    // This is represented through the numAttributes dictionary, which is returned by this function
     func countAttributes(arr: [Attraction], userAttributes: [String]) -> [Int: Int] {
         var numAttributes: [Int: Int] = ([:])
         
+        // Loops through all 50 tourist attractions
         for row in 0...arr.count - 1 {
             var count = 0
             
-            if userAttributes[0] == arr[row].loc {
+            if (userAttributes[0] == arr[row].loc) {
                 count+=1
+            
+            // The other option is only located for the location attribute
+            // If other is selected by the user and the tourist attraction is not located in the areas that the user can select from, then that tourist location meets this attribute.
+            } else if userAttributes[0] == "Other" {
+                if arr[row].loc != "Seattle" && arr[row].loc != "Tacoma" && arr[row].loc != "Bellevue" && arr[row].loc != "Olympia" && arr[row].loc != "Friday Harbor" {
+                    count += 1
+                }
             }
             if arr[row].typeOfLoc.contains(userAttributes[1]) {
                 count+=1
@@ -204,24 +194,17 @@ struct SuggestAttractionsView: View {
                 count += 1
             }
             
+            // Value is assigned
             numAttributes[row] = count
             
         }
         
         return numAttributes
     }
-    
-    func TopFive(arr: [Attraction], userAttributes: [String], num: Int, sortedDict: Array([Int: Int)]) -> (String, Attraction, Int) {
-        let str: String = arr[sortedDict[num].key].name
-        let count = sortedDict[num].value
-        print(str)
-        return (str, arr[sortedDict[num].key], count)
-        
-    }
 
 }
 
-
+// Descirbes the layout of display of the top five attractions
 struct AttractionRowView: View {
   var title: String
   var description: String?
@@ -255,6 +238,7 @@ struct AttractionRowView: View {
   }
 }
 
+// Defines the Attraction object using name, location, type of location, price, season, age group, and coordinate
 struct Attraction: Identifiable {
     let id = UUID()
     var name: String
@@ -267,8 +251,8 @@ struct Attraction: Identifiable {
     var coordinate: CLLocationCoordinate2D
 }
 
-struct SuggestAttributesView_Previews: PreviewProvider {
+struct SuggestAttributes_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestAttractionsView(attribute1: .constant(""), attribute2: .constant(""), attribute3: .constant(""), attribute4: .constant(""), attribute5: .constant(""))
+        SuggestAttractions(attribute1: .constant(""), attribute2: .constant(""), attribute3: .constant(""), attribute4: .constant(""), attribute5: .constant(""))
     }
 }
