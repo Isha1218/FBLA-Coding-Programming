@@ -1,0 +1,51 @@
+Name,Location,Type Of Location,Price,Season,Age Group,Latitude,Longitude
+Space Needle,Seattle,Landmark,30,"Winter, Spring, Summer, Fall","Kids, Adults",47.6205000000000,-122.349277000000
+Wild Waves,Federal Way,Theme Park,40,"Spring, Summer",Kids,47.2734003834440,-122.312745377425
+Mount Ranier,Tacoma,Nature,20,Summer,"Kids, Adults",46.8537143424195,-121.761181369441
+The Seattle Great Wheel,Seattle,Theme Park,10,"Winter, Spring, Summer, Fall","Kids, Adults, Seniors",47.6060910000000,-122.342430000000
+Olympic National Park,Port Angeles,Nature,20,Summer,"Kids, Adults",47.8471331752123,-123.615633323275
+Leavenworth,Cascade Mountains,Culture,"1,000",Spring,Adults,47.5979942200712,-120.661598459495
+Mount Saint Helens,Skamania County,Nature,10,"Summer, Fall","Kids, Adults",46.1933594141194,-122.195636795034
+Skagit Valley Tulip Festival,Skagit County,Nature,20,"Spring, Summer","Kids, Adults, Seniors",48.4925691106486,-122.247527411386
+Museum of Glass,Tacoma,Art,30,"Winter, Spring, Summer, Fall","Adults, Seniors",47.2456100293578,-122.434083375575
+Washington State Capitol Building,Olympia,Historical,0,"Winter, Spring, Summer, Fall","Kids, Seniors",47.0360957334523,-122.904423744897
+Museum of Pop Culture,Seattle,Art,30,"Winter, Spring, Summer, Fall","Kids, Adults, Seniors",47.6216053145887,-122.348092316036
+San Juan Islands,Friday Harbor,Nature,150,Summer,"Kids, Adults",48.6369186066642,-123.005011516114
+Diablo Lake,North Cascades,Nature,0,"Spring, Summer","Kids, Adults",48.8136847030416,-121.280449509085
+North Cascades National Park,North Cascades,Nature,0,"Spring, Summer","Kids, Adults",48.7718000000000,-121.298500000000
+Tacoma Art Museum,Tacoma,Art,20,"Winter, Spring, Summer, Fall","Adults, Seniors",47.2475599070071,-122.436856146739
+Bellevue Botanical Garden,Bellevue,Nature,0,"Spring, Summer","Adults, Seniors",47.6194074478981,-122.181765949060
+Snoqualmie Falls,Snoqualmie,Nature,0,"Spring, Summer","Kids, Adults, Seniors",47.5418728953225,-121.837843665772
+Northwest Railway Museum,Snoqualmie,Historical,20,"Winter, Spring, Summer, Fall","Kids, Adults, Seniors",47.5299950019594,-121.826905824913
+Seattle Aquarium,Seattle,Nature,30,"Winter, Spring, Summer, Fall",Kids,47.6075448480122,-122.342934344873
+Pike Place Market,Seattle,Culture,10,"Winter, Spring, Summer, Fall","Adults, Seniors",47.6085198119605,-122.340230914186
+Gum Wall,Seattle,Landmark,20,Summer,Kids,47.6084000000000,-122.340300000000
+The Museum of Flight,Seattle,Historical,20,"Winter, Spring, Summer, Fall","Kids, Adults, Seniors",47.5186465650148,-122.296833044864
+Chihuly Garden and Glass,Seattle,Nature,30,"Spring, Summer","Kids, Adults, Seniors",47.6206828167579,-122.350522704395
+Woodland Park Zoo,Seattle,Nature,20,"Spring, Summer",Kids,47.6687960284256,-122.350854017885
+Pioneer Square,Seattle,Culture,0,"Spring, Summer, Fall",Adults,47.6020410819986,-122.334289910306
+Lake Chelan,Chelan County,Nature,20,"Spring, Summer","Kids, Adults",48.0452597046782,-120.340088133940
+Riverfront Park,Spokane,Nature,10,"Spring, Summer","Kids, Adults, Seniors",47.6622371002420,-117.419117573706
+Cape Flattery,Clallam County,Nature,10,"Spring, Summer","Kids, Adults",48.3847691089358,-124.713896074254
+Palouse Falls State Park,Washtunca,Nature,10,"Spring, Summer","Kids, Adults, Seniors",46.6650677946195,-118.224092047203
+Birch Bay Water Slides,Birch Bay,Theme Park,20,"Spring, Summer",Kids,48.9369945137679,-122.747449900832
+Surf'n Slide Water Park,Moses Lake,Theme Park,50,Kids,"Spring, Summer",47.1266026711216,-119.280224760237
+John S. McMillin Memorial Mausoleum,San Juan County,Landmark,0,"Winter, Spring, Summer, Fall","Adults, Seniors",48.6160758505946,-123.148970715994
+Chihuly Bridge of Glass,Tacoma,Landmark,0,"Winter, Spring, Summer, Fall","Adults, Seniors",47.2458848787429,-122.434458685365
+Grand Coulee Dam,Grand Coulee,Landmark,0,"Spring, Summer",Adults,47.9567181346825,-118.981092190888
+University of Washington,Seattle,Landmark,0,"Winter, Spring, Summer, Fall","Kids, Adults",47.6696011438278,-122.301132484721
+Lava Canyon Suspension Bridge,Cougar,Landmark,10,"Spring, Summer","Kids, Adults",46.1693375197836,-122.083222190964
+Fairhaven Historic District,Bellingham,Historical,0,"Spring, Summer, Fall","Adults, Seniors",48.7189945825312,-122.507077602976
+Fort Vancouver,Vancouver,Historical,10,"Winter, Spring, Summer, Fall","Kids, Adults, Seniors",45.6262965187944,-122.656662446807
+Stevens Pass,Skykomish,Ski,100,Winter,"Kids, Adults",47.7474250409548,-121.089699868947
+Mount Baker Ski Area,Deming,Ski,10,Winter,"Kids, Adults",48.8582850482741,-121.667527454917
+Gorge Amphitheatre,George,Landmark,115,"Winter, Spring, Summer, Fall","Kids, Adults, Seniors",47.1018430517486,-119.995573484153
+Grays Harbor Lighthouse,Westport,Landmark,10,"Spring, Summer","Kids, Adults, Seniors",46.8883218964329,-124.116879616067
+Washington State University,Pullman,Landmark,0,"Winter, Spring, Summer, Fall","Kids, Adults",46.7321117551240,-117.154272708156
+Sky View Observatory,Seattle,Landmark,10,"Winter, Spring, Summer, Fall","Kids, Adults, Seniors",47.6044506855285,-122.331139848575
+Lumen Field,Seattle,Landmark,20,"Winter, Spring, Summer, Fall","Kids, Adults",47.5952964818859,-122.331585758366
+Tacoma Narrows Bridge,Pierce County,Landmark,10,"Winter, Spring, Summer, Fall","Adults, Seniors",47.2690799206816,-122.551645973723
+Franklin Falls,King County,Nature,10,"Spring, Summer","Kids, Adults",47.4262923163501,-121.432993083763
+Harborside Fountain Park,Bremerton,Nature,0,"Spring, Summer","Kids, Adults, Seniors",47.5622082117217,-122.625801516039
+Stonehenge Memorial,Maryhill,Landmark,0,"Spring, Summer","Kids, Adults",45.6951228858361,-120.806038063908
+Washington State History Musuem,Tacoma,Historical,20,"Winter, Spring, Summer, Fall","Kids, Adults, Seniors",47.2448015302137,-122.436050562083
